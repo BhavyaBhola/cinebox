@@ -1,0 +1,169 @@
+{% extends 'base.html'%} {%block title%} SignUp page {%endblock%} 
+
+{% block style%}
+html,
+body {
+  height: 100%;
+  
+
+}
+
+body{
+
+  background-image: url("/static/img/thomas-william-4qGbMEZb56c-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
+body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+ 
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  
+}
+.form-signin input[type="password"] {
+
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.alert{
+  position: absolute;
+  z-index: 101;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fde073;
+  text-align: center;
+  line-height: 2.5;
+  overflow: hidden; 
+  -webkit-box-shadow: 0 0 5px black;
+  -moz-box-shadow:    0 0 5px black;
+  box-shadow:         0 0 5px black;
+}
+
+
+.d1{
+  margin-left:auto;
+  margin-right:auto;
+  background:white;
+  padding:20px;
+  border-radius:30px;
+  opacity:0.8;
+}
+
+button{
+  margin-top:10px;
+}
+
+{% endblock %}
+
+
+
+
+{%block body%}
+<body class="text-center">
+  {%if messages%}
+  <div class="alert alert-warning">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close"
+      >&times;</a
+    >
+    <strong>{% for message in messages %} {{ message }} {% endfor %}</strong>
+  </div>
+
+  {% endif %}
+
+  <div class='d1'>
+  <form class="form-signin" , method="POST">
+    {%csrf_token%}
+    <img
+      class="mb-4"
+      src="/static/img/connor-betts-FVm7T8yqifI-unsplash.jpg"
+      alt=""
+      width="72"
+      height="72"
+    />
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <label for="inputEmail" class="sr-only">username</label>
+    <input
+      type="text"
+      id="inputEmail"
+      name="username"
+      class="form-control"
+      placeholder="Username"
+      required
+      autofocus
+    />
+    <label for="inputPassword" class="sr-only">Password1</label>
+    <input
+      type="password"
+      id="inputPassword"
+      name="password1"
+      class="form-control"
+      placeholder="Password"
+      required
+    />
+
+    <label for="inputPassword" class="sr-only">Password2</label>
+    <input
+      type="password"
+      id="inputPassword"
+      name="password2"
+      class="form-control"
+      placeholder="Enter your password again"
+      required
+    />
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">
+      Sigh Up 
+    </button>
+
+  </form>
+</div>
+</body>
+{%endblock body%}
