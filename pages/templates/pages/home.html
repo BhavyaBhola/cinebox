@@ -165,8 +165,9 @@
               <li><a href="#" class="nav-link px-2 link-body-emphasis">Products</a></li>
             </ul>
     
-            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-              <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search" , method='POST',action='/search'>
+              {% csrf_token %}
+              <input type="search" class="form-control" placeholder="Search..." aria-label="Search" , name='search'>
             </form>
     
             <div class="dropdown text-end">
@@ -192,13 +193,13 @@
       
       <div class="carousel-inner">
         <div class="carousel-item" data-bs-interval="10000">
-          <img class="carousel__img" src="/static/img/noom-peerapong-2uwFEAGUm6E-unsplash.jpg" alt="First slide" style="width: 100%">
+          <img class="carousel__img" src="{{images.1}}" alt="First slide" style="width: 100%">
         </div>
         <div class="carousel-item" data-bs-interval="2000">
-          <img class="carousel__img" src="https://unsplash.it/2000/1250?image=397" alt="First slide" style="width: 100%">
+          <img class="carousel__img" src="{{images.0}}" alt="First slide" style="width: 100%">
         </div>
         <div class="carousel-item active">
-          <img class="carousel__img" src="https://unsplash.it/2000/1250?image=397" alt="First slide" style="width: 100%">
+          <img class="carousel__img" src="{{images.2}}" alt="First slide" style="width: 100%">
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
@@ -219,12 +220,12 @@
         <div class="card col-md-12 p-3">
           <div class="row ">
             <div class="col-md-4">
-              <img class="w-100" src="https://via.placeholder.com/350x350">
+              <img class="w-100" src="{{images.0}}">
             </div>
             <div class="col-md-8">
               <div class="card-block">
-                <h6 class="card-title">Card Title</h6>
-                <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <h6 class="card-title">{{titles.0}}</h6>
+                <p class="card-text text-justify">{{details.0}}</p>
                 <a href="https://www.google.com" class="btn btn-primary">read more...</a>
               </div>
             </div>
@@ -234,25 +235,25 @@
           <div class="row ">
             <div class="col-md-8">
               <div class="card-block">
-                <h6 class="card-title text-right">Card Title</h6>
-                <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <h6 class="card-title text-right">{{titles.1}}</h6>
+                <p class="card-text text-justify">{{details.1}}</p>
                 <a href="#" class="btn btn-primary">read more...</a>
               </div>
             </div>
             <div class="col-md-4">
-              <img class="w-100" src="https://via.placeholder.com/350x350">
+              <img class="w-100" src="{{images.1}}">
             </div>
           </div>
         </div>
         <div class="card col-md-12 p-3">
           <div class="row ">
             <div class="col-md-4">
-              <img class="w-100" src="https://via.placeholder.com/350x350">
+              <img class="w-100" src="{{images.2}}">
             </div>
             <div class="col-md-8">
               <div class="card-block">
-                <h6 class="card-title">Card Title</h6>
-                <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <h6 class="card-title">{{titles.2}}</h6>
+                <p class="card-text text-justify">{{details.2}}</p>
                 <a href="#" class="btn btn-primary">read more...</a>
               </div>
             </div>
@@ -263,13 +264,13 @@
           <div class="row ">
             <div class="col-md-8">
               <div class="card-block">
-                <h6 class="card-title text-right">Card Title</h6>
-                <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <h6 class="card-title text-right">{{titles.3}}</h6>
+                <p class="card-text text-justify">{{details.3}}</p>
                 <a href="#" class="btn btn-primary">read more...</a>
             </div>
               </div>
               <div class="col-md-4">
-              <img class="w-100" src="https://via.placeholder.com/350x350">
+              <img class="w-100" src="{{images.3}}">
             </div>
           </div>
         </div>
