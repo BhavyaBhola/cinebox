@@ -140,7 +140,47 @@
   
   }
 
-
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Style the search field */
+  form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+  }
+  
+  /* Style the submit button */
+  form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+  }
+  
+  form.example button:hover {
+    background: #0b7dda;
+  }
+  
+  /* Clear floats */
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .example{
+    margin-right:20px;
+  }
 
 
 
@@ -165,9 +205,10 @@
               <li><a href="#" class="nav-link px-2 link-body-emphasis">Products</a></li>
             </ul>
     
-            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search" , method='POST',action='/search'>
-              {% csrf_token %}
-              <input type="search" class="form-control" placeholder="Search..." aria-label="Search" , name='search'>
+            <form class="example" action="./search/" , method='POST'>
+              {%csrf_token%}
+              <input type="text" placeholder="Search.." name="movie">
+              <button type="submit"><i class="fa fa-search"></i></button>
             </form>
     
             <div class="dropdown text-end">
@@ -226,7 +267,7 @@
               <div class="card-block">
                 <h6 class="card-title">{{titles.0}}</h6>
                 <p class="card-text text-justify">{{details.0}}</p>
-                <a href="https://www.google.com" class="btn btn-primary">read more...</a>
+                <a href="./details/" class="btn btn-primary">read more...</a>
               </div>
             </div>
           </div>

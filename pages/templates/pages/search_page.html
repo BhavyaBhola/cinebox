@@ -1,1 +1,35 @@
+{%extends 'base.html'%}
+
+{%block style%}
+    body{
+        background-color:red;
+}
+
+    .container{
+        margin-top:50px;
+        border-radius:10px;
+    }
+    
+
+{%endblock style%}
+
+{%block body%}
+<div class="container">
+    <div class="row">
+      <div class="card col-md-12 p-3">
+        <div class="row ">
+          <div class="col-md-4">
+            <img class="w-100" src="{{images.0}}">
+          </div>
+          <div class="col-md-8">
+            <div class="card-block">
+              <h6 class="card-title">{{titles.0}}</h6>
+              <p class="card-text text-justify">{{details.0}}</p>
+              <a href="./details/" class="btn btn-primary">read more...</a>
+            </div>
+          </div>
+        </div>
+      </div>
+{%endblock body%}
+
 movie_name={{movie_name}}

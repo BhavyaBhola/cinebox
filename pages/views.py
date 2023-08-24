@@ -2,7 +2,7 @@ from django.shortcuts import render
 import random
 from django.contrib.auth.decorators import login_required
 # Create your views here.
-from .api import GetImages, PopularMoviesTitles,getDetails
+from .api import GetImages, PopularMoviesTitles,getDetails , findDetails
 from .models import Profile
 
 @login_required
@@ -47,12 +47,18 @@ def ProfileView(request , *args , **kwargs):
 @login_required
 def searchView(request , *args , **kwargs):
     print(request)
-    if request.method=='POST':
-        movie_name = request.POST.get('search')
-        #details = getDetails(movie_name)
-
+    if request.method == 'POST':
+        movie = request.POST.get('movie')
         context = {
-            'title':movie_name
+            'movie_name':movie,
+            'images':[],
+            'details':[]
         }
 
-        return render(request , 'pages/search_page.html' , context)
+        #title = findDetails(movie)
+        
+        #context["images"].append(GetImages(title)['images'][0]['url'])
+        #context['details'].append(getDetails(title)['plotOutline']['text'])
+
+        
+        return render(request , 'pages/search_page.html',context)

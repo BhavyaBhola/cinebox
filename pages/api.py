@@ -54,3 +54,21 @@ def getDetails(title):
 
     
     return response.json()
+
+def findDetails(title):
+    import requests
+
+    url = "https://imdb8.p.rapidapi.com/title/find"
+
+    querystring = {"q":title}
+
+    headers = {
+	    "X-RapidAPI-Key": "de15a6ea5dmshde27d79a7d350bfp1611e4jsn8766f00c2bf3",
+	    "X-RapidAPI-Host": "imdb8.p.rapidapi.com"
+    }
+
+    response = requests.get(url, headers=headers, params=querystring)
+
+    out = response.json()['results'][0]['id'].split('/')[2]
+    
+    return out
