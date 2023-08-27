@@ -48,9 +48,9 @@ def ProfileView(request , *args , **kwargs):
 def searchView(request , *args , **kwargs):
     print(request)
     if request.method == 'POST':
-        movie = request.POST.get('movie')
+        #movie = request.POST.get('movie')
         context = {
-            'movie_name':movie,
+            #'movie_name':movie,
             'images':[],
             'details':[]
         }
